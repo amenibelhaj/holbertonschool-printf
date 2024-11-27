@@ -26,9 +26,10 @@ else if (*ptr == 's')
 char *str = va_arg(args, char*);
 if (!str)
 str = "(null)";
-
 while (*str)
-write(1, str++, 1);
+{
+count += write(1, str++, 1);
+}
 }
 else if (*ptr == '%')
 count += write(1, "%", 1);
