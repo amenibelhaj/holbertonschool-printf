@@ -35,8 +35,7 @@ else if (*ptr == '%')
 count += write(1, "%", 1);
 }
 else
-count += write(1, ptr, 1);
-ptr++;
+ptr--;
 }
 va_end(args);
 return (count);
