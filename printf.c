@@ -32,7 +32,7 @@ count += write(1, str++, 1);
 }
 }
 else if (*ptr == '%')
-count += write(1, %, 1);
+count += write(1, "%", 1);
 }
 else
 count += write(1, ptr, 1);
