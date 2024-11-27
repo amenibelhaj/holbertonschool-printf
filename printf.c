@@ -37,9 +37,12 @@ else
 continue;
 }
 else
+{
 count += write(1, ptr, 1);
+}
 ptr++;
 }
 va_end(args);
 return (count);
 }
+
