@@ -41,6 +41,12 @@ count += write(1, "%%", 1);
 else
 {
 
+}
+}
+else if (*ptr == '%' && *(ptr + 1) == '\0')
+{
+break;
+}
 count += write(1, ptr, 1);
 }
 ptr++;
