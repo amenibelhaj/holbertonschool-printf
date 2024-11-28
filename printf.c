@@ -34,6 +34,9 @@ while (*str)
 count += write(1, str++, 1);
 }
 else if (*ptr == '%')
+if (!ptr)
+ptr = "(null)";
+while (*ptr)
 {
 count += write(1, "%%", 1);
 }
