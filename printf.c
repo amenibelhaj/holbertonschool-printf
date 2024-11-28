@@ -5,7 +5,6 @@
  * @format: The format string containing characters and format specifiers.
  * Return: The total number of characters printed (excluding the null byte).
  */
-
 int _printf(const char *format, ...)
 {
 va_list args;
@@ -14,6 +13,7 @@ const char *ptr = format;
 
 if (format == NULL)
 return (0);
+
 va_start(args, format);
 while (*ptr)
 {
@@ -34,13 +34,16 @@ while (*str)
 count += write(1, str++, 1);
 }
 else if (*ptr == '%')
+{
 count += write(1, "%", 1);
 }
+}
 else
+{
 count += write(1, ptr, 1);
+}
 ptr++;
 }
-
 va_end(args);
 return (count);
 }
