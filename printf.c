@@ -40,7 +40,7 @@ count += write(1, "%", 1);
 }
 else
 {
-count += write(1, ptr, 1);
+return (-1);
 }
 ptr++;
 }
