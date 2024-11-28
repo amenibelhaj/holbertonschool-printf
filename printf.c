@@ -12,7 +12,7 @@ int count = 0;
 const char *ptr = format;
 
 if (format == NULL)
-return (1);
+return (0);
 
 va_start(args, format);
 while (*ptr)
