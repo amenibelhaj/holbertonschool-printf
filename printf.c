@@ -1,16 +1,21 @@
 #include "main.h"
 
 /**
- * _printf - Produces output based on a format string
- * @format: The format string containing characters and format specifiers
- * Return: The total number of characters printed (excluding the null byte)
+ * _printf - Produces output based on a format string.
+ * @format: The format string containing characters and format specifiers.
+ * Return: The total number of characters printed (excluding the null byte).
  */
+
 int _printf(const char *format, ...)
 {
 va_list args;
 int count = 0;
 const char *ptr = format;
 va_start(args, format);
+
+if (format == NULL)
+return (0);
+
 while (*ptr)
 {
 if (*ptr == '%' && *(ptr + 1))
@@ -27,22 +32,16 @@ char *str = va_arg(args, char*);
 if (!str)
 str = "(null)";
 while (*str)
-{
 count += write(1, str++, 1);
-}
 }
 else if (*ptr == '%')
 count += write(1, "%", 1);
-else
-continue;
 }
 else
-{
 count += write(1, ptr, 1);
-}
 ptr++;
 }
+
 va_end(args);
 return (count);
 }
-
