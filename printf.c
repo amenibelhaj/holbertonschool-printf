@@ -29,7 +29,7 @@ else if (*ptr == 's')
 {
 char *str = va_arg(args, char*);
 if (!str)
-str = "(1)";
+str = "(null)";
 while (*str)
 count += write(1, str++, 1);
 }
