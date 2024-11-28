@@ -33,7 +33,7 @@ str = "(null)";
 while (*str)
 count += write(1, str++, 1);
 }
-else if (*ptr == '%%')
+else if (*ptr == '%')
 {
 count += write(1, "%%", 1);
 }
