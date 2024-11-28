@@ -45,5 +45,5 @@ count += write(1, ptr, 1);
 ptr++;
 }
 va_end(args);
-return (-1);
+return (0);
 }
