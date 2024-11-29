@@ -5,6 +5,7 @@
  * @format: The format string containing characters and format specifiers.
  * Return: The total number of characters printed (excluding the null byte).
  */
+
 int _printf(const char *format, ...)
 {
 va_list args;
@@ -15,14 +16,12 @@ return (-1);
 va_start(args, format);
 while (*ptr)
 {
-if (*ptr == '%' && *(ptr + 1) == '\0')
-return (-1);
 if (*ptr == '%' && *(ptr + 1))
 {
 ptr++;
 if (*ptr == 'c')
 {
-char c = va_arg(args, int);
+char c = (char)va_arg(args, int);
 count += write(1, &c, 1);
 }
 else if (*ptr == 's')
@@ -34,18 +33,12 @@ while (*str)
 count += write(1, str++, 1);
 }
 else if (*ptr == 'd' || *ptr == 'i')
-{
-int num = va_arg(args, int);
-count += print_integer(num);
-}
+count += print_integer(va_arg(args, int));
 else if (*ptr == '%')
-{
 count += write(1, "%", 1);
-}}
-else
-{
-count += write(1, ptr, 1);
 }
+else if (*ptr != '%')
+count += write(1, ptr, 1);
 ptr++;
 }
 va_end(args);
