@@ -8,37 +8,38 @@
 int print_integer(int num)
 {
 int count = 0;
-int temp = num;
-int digits = 0;
-int i;
-int j;
-int divisor;
-char digit;
+unsigned int n;
 if (num < 0)
 {
-count += write(1, "-", 1);
-num = -num;
-}
-temp = num;
-while (temp != 0)
+if (num == -2147483648)
 {
-digits++;
-temp /= 10;
-}
-if (num == 0)
-{
-count += write(1, "0", 1);
+count += write(1, "-2147483648", 11);
 return (count);
 }
-for (i = digits - 1; i >= 0; i--)
-{
-divisor = 1;
-for (j = 1; j < digits; j++)
-divisor *= 10;
-digit = (num / divisor) +'0';
-count += write(1, &digit, 1);
-num %= divisor;
-digits--;
+count += write(1, "-", 1);
+n = -num;
 }
+else
+{
+n = num;
+}
+if (n == 0)
+{
+count += write(1, "0", 1);
+}
+else
+{
+char digits[10];
+int i = 0;
+while (n > 0)
+{
+digits[i] = (n % 10) + '0';
+n /= 10;
+i++;
+}
+while (--i >= 0)
+{
+count += write(1, &digits[i], 1);
+}}
 return (count);
 }
