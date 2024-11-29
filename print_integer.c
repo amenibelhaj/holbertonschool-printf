@@ -1,3 +1,4 @@
+
 #include "main.h"
 #include <unistd.h>
 
@@ -41,7 +42,6 @@ i++;
 while (--i >= 0)
 {
 count += write(1, &digits[i], 1);
-}
-}
+}}
 return (count);
 }
