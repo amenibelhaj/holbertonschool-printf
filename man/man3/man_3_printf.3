@@ -1,0 +1,78 @@
+.TH MAN_3_PRINTF 3 "November 2024" "1.0" "Custom Library"
+.SH NAME
+man_3_printf \- A custom implementation of printf
+.SH SYNOPSIS
+.B #include "main.h"
+.br
+.B int _printf(const char *format, ...);
+.SH DESCRIPTION
+The function \fB_printf\fR is a custom implementation of the standard C library function \fBprintf\fR. It is designed to output formatted text to the standard output stream (usually the terminal).
+
+The \fB_printf\fR function supports basic format specifiers such as:
+- %c: Print a character.
+- %s: Print a string.
+- %d / %i: Print an integer.
+- %%: Print a literal percent sign.
+
+The function takes a format string and a variable number of arguments, similar to the standard \fBprintf\fR. It returns the total number of characters printed (excluding the null byte) or \-1 if there is an error.
+
+.SH PARAMETERS
+The function accepts the following parameters:
+.TP
+\fBconst char *format\fR
+The format string, which may contain format specifiers like %c, %s, %d, etc.
+.TP
+\fB...\fR
+Additional arguments that correspond to the format specifiers in the format string.
+
+.SH RETURN VALUE
+The function returns an integer:
+- The total number of characters printed (excluding the null byte).
+- \-1 if there is an error, such as an invalid format specifier or a null format string.
+
+.SH EXAMPLES
+
+.TP
+.B "Printing a character:"
+.nf
+_printf("Character: %c\n", 'A');
+.fi
+This will output: "Character: A"
+
+.TP
+.B "Printing a string:"
+.nf
+_printf("Hello, %s!\n", "World");
+.fi
+This will output: "Hello, World!"
+
+.TP
+.B "Printing an integer:"
+.nf
+_printf("Number: %d\n", 42);
+.fi
+This will output: "Number: 42"
+
+.TP
+.B "Printing multiple items:"
+.nf
+_printf("Character: %c, String: %s, Number: %d\n", 'B', "Test", 123);
+.fi
+This will output: "Character: B, String: Test, Number: 123"
+
+.TP
+.B "Printing a literal percent sign:"
+.nf
+_printf("The percent sign: %%\n");
+.fi
+This will output: "The percent sign: %"
+
+.SH SEE ALSO
+.B printf(3)
+The standard C library printf function for formatted output.
+
+.SH AUTHOR
+"Ameni and Nourane"
+
+.SH LICENSE
+This code is released under the MIT License (holbertonschool).
