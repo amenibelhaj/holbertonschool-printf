@@ -33,11 +33,6 @@ str = "(null)";
 while (*str)
 count += write(1, str++, 1);
 }
-else if (*ptr == 'd' || *ptr == 'i')
-{
-int num = va_arg(args, int);
-count += print_integer(num);
-}
 else if (*ptr == '%')
 {
 count += write(1, "%", 1);
