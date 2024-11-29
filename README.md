@@ -39,7 +39,7 @@ If an invalid format specifier is provided, the function simply prints the % cha
 
 # print_integer:
 
-# int print_integer(int num);
+<h3> int print_integer(int num);</h3>
 
 This is a helper function that prints an integer to the console. It handles both positive and negative numbers and outputs the appropriate string of digits.
 
