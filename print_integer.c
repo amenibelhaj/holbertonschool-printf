@@ -1,4 +1,5 @@
 #include "main.h"
+#include <unistd.h>
 
 /**
  * print_integer - Helper function to print an integer.
@@ -40,6 +41,7 @@ i++;
 while (--i >= 0)
 {
 count += write(1, &digits[i], 1);
-}}
+}
+}
 return (count);
 }
