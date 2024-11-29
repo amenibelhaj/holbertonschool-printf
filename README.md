@@ -69,9 +69,4 @@ To use the _printf function, you can call it just like the standard printf funct
 If the format string is NULL, _printf will return -1 to indicate an error.
 If a format specifier is incomplete or invalid (e.g., % without a specifier), _printf will return -1.
 
-## Appendix
-
-Any additional information goes here
-
-
 ## README file
