@@ -1,5 +1,3 @@
-
-
 #include "main.h"
 
 /**
@@ -19,31 +17,19 @@ while (*ptr)
 {
 if (*ptr == '%' && *(ptr + 1) == '\0')
 return (-1);
+
 if (*ptr == '%' && *(ptr + 1))
 {
 ptr++;
 if (*ptr == 'c')
-{
-char c = va_arg(args, int);
-count += write(1, &c, 1);
-}
+count += print_char(args);
 else if (*ptr == 's')
-{
-char *str = va_arg(args, char*);
-if (!str)
-str = "(null)";
-while (*str)
-count += write(1, str++, 1);
-}
+count += print_string(args);
 else if (*ptr == 'd' || *ptr == 'i')
-{
-int num = va_arg(args, int);
-count += print_integer(num);
-}
+count += print_integer(va_arg(args, int));
 else if (*ptr == '%')
-{
 count += write(1, "%", 1);
-}}
+}
 else
 {
 count += write(1, ptr, 1);

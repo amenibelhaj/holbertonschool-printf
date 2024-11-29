@@ -1,7 +1,4 @@
-
 #include "main.h"
-#include <unistd.h>
-
 /**
  * print_integer - Helper function to print an integer.
  * @num: The integer to print.
