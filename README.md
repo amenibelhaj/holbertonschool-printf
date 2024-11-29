@@ -20,7 +20,7 @@ print_integer.c: Contains the implementation of the helper function print_intege
 
 # Functionality : 
 
-<h1> int _printf(const char *format, ...);</h1>
+<h3> int _printf(const char *format, ...);</h3>
 
 This is the main function that performs formatted output. It takes a format string and an unspecified number of arguments (using ...) and prints the output to the console based on the format specifiers in the format string.
 
