@@ -32,14 +32,23 @@ str = "(null)";
 while (*str)
 count += write(1, str++, 1);
 }
+else if (*ptr == 'd' || *ptr == 'i')
+{
+count += print_integer(va_arg(args, int));
+}
 else if (*ptr == '%')
+{
 count += write(1, "%", 1);
+}
 else
 {
-count += write(1, ptr - 1, 2);
+count += write(1, "%", 1);
+count += write(1, ptr, 1);
 }}
 else
+{
 count += write(1, ptr, 1);
+}
 ptr++;
 }
 va_end(args);
