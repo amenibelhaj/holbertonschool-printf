@@ -22,35 +22,27 @@ ptr++;
 if (*ptr == 'c')
 {
 char c = va_arg(args, int);
-count += write(1, &c, 1);
-}
+count += write(1, &c, 1); }
 else if (*ptr == 's')
 {
 char *str = va_arg(args, char*);
 if (!str)
 str = "(null)";
 while (*str)
-count += write(1, str++, 1);
-}
+count += write(1, str++, 1); }
 else if (*ptr == 'd' || *ptr == 'i')
 {
-count += print_integer(va_arg(args, int));
-}
+count += print_integer(va_arg(args, int)); }
 else if (*ptr == '%')
 {
-count += write(1, "%", 1);
-}
+count += write(1, "%", 1); }
 else
 {
 count += write(1, "%", 1);
-count += write(1, ptr, 1);
-}}
+count += write(1, ptr, 1); }}
 else
 {
-count += write(1, ptr, 1);
-}
-ptr++;
-}
+count += write(1, ptr, 1); }
+ptr++; }
 va_end(args);
-return (count);
-}
+return (count); }
