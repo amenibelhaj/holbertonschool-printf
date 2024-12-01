@@ -70,4 +70,4 @@ If the format string is NULL, _printf will return -1 to indicate an error.
 If a format specifier is incomplete or invalid (e.g., % without a specifier), _printf will return -1.
 
 ## README file
-# !{flowchart} (![flochart](<Capture d’écran 1446-05-30 à 01.37.22 Petite.jpeg>)
+# !{flowchart} (![alt text](<my flowchart.jpeg>))
