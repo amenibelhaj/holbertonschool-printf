@@ -60,6 +60,24 @@ The function also ensures that the - sign is correctly printed for negative inte
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 
 
+# Testing
+
+
+#include "main.h"
+
+int main(void)
+{
+_printf("integer:[%i]\n", 20);
+_printf("Character:[%c]\n", 'H');
+_printf("String:[%s]\n", "I am a string !");
+_printf("Percent:[%%]\n");
+}
+Output:
+integer:[20]
+Character:[H]
+String:[I am a string !]
+Percent:[%]
+
 # Usage : 
 
 To use the _printf function, you can call it just like the standard printf function.
